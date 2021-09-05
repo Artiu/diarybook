@@ -1,3 +1,16 @@
 @tailwind base;
+
+@layer base{
+    a, input[type="submit"], button {
+        @apply block w-max px-4 py-1 rounded-lg cursor-pointer;
+    }
+    input, textarea {
+        @apply outline-none w-full px-2 resize-none  rounded-lg bg-green-200 shadow-sm lg:w-1/2;
+    }
+    textarea {
+        @apply h-32;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;

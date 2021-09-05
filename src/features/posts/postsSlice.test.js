@@ -1,4 +1,4 @@
-import postsSlice, { addPost, editPost, removePost, selectPosts } from "./postsSlice";
+import postsSlice, { addPost, editPost, removePost } from "./postsSlice";
 
 jest.mock('@reduxjs/toolkit', () => {
     const originalModule = jest.requireActual('@reduxjs/toolkit');

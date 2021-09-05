@@ -1,3 +1,7 @@
 export default function formatDate(date) {
-    return date.toLocaleDateString() + " " + date.getHours() + ":" + date.getMinutes();
+    let minutes = date.getMinutes();
+    if(minutes < 10){
+        minutes = "0" + minutes;
+    }
+    return date.toLocaleDateString() + " " + date.getHours() + ":" + minutes;
 }
