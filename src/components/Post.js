@@ -26,16 +26,16 @@ export default function Post() {
                 <p>{formatDate(date)}</p>
             </div>
             <div className="my-4 flex gap-4 justify-center">
-                <Link to={"/posts/edit/"+id} className="bg-gray-300 hover:bg-gray-400">Edit post</Link>
+                <Link to={`/posts/edit/${id}`} className="bg-gray-300 hover:bg-gray-400">Edit post</Link>
                 <button className="bg-red-500 hover:bg-red-600" onClick={() => setIsRemoveConfirmationOpen(true)}>Remove post</button>
             </div>
             {isRemoveConfirmationOpen &&
-            <div className="fixed top-0 left-0 w-screen h-screen">
-                <div className="w-full md:w-96 shadow-lg absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 p-6">
+            <div className="fixed top-0 left-0 w-screen h-screen bg-white bg-opacity-90 backdrop-blur">
+                <div className="w-full md:w-96 shadow-lg absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 p-6">
                     <p>Are you sure you want remove this post?</p>
                     <div className="mt-4 flex gap-2">
-                        <button className="bg-gray-300 hover:bg-gray-400" onClick={() => setIsRemoveConfirmationOpen(false)}>Go back</button>
                         <button className="bg-red-500 hover:bg-red-600" onClick={handleRemove}>Remove post</button>
+                        <button className="bg-gray-300 hover:bg-gray-400" onClick={() => setIsRemoveConfirmationOpen(false)}>Go back</button>
                     </div>
                 </div>
             </div>

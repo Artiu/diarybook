@@ -1,25 +1,13 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
-const initialState = [{
-    id:'1',
-    title:"Some title",
-    description: "Some description",
-    date: new Date(),
-},
-{
-    id:'2',
-    title:"Some title",
-    description: "Some description",
-    date: new Date(),
-}
-];
+const initialState = [];
 
 export const postsSlice = createSlice({
     name: 'posts',
     initialState,
     reducers:{
         addPost: (state, action) => {
-            state.push({
+            state.unshift({
                 id: nanoid(),
                 title: action.payload.title,
                 description: action.payload.description,
@@ -33,10 +21,20 @@ export const postsSlice = createSlice({
             const index = state.findIndex((post) => post.id === action.payload.id);
             state[index].title = action.payload.title;
             state[index].description = action.payload.description;
+        },
+        loadPosts: () => {
+            let store = JSON.parse(localStorage.getItem("store"));
+            if(store){
+                store.posts.forEach((post) => {
+                    post.date = new Date(post.date);
+                })
+                return store.posts;
+            }
+            return [];
         }
     }
 })
 
-export const { addPost, removePost, editPost } = postsSlice.actions;
+export const { addPost, removePost, editPost, loadPosts } = postsSlice.actions;
 
 export default postsSlice.reducer;
