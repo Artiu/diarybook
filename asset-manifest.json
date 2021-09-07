@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/diarybook/static/css/main.f7205a20.chunk.css",
-    "main.js": "/diarybook/static/js/main.b749fcda.chunk.js",
-    "main.js.map": "/diarybook/static/js/main.b749fcda.chunk.js.map",
+    "main.css": "/diarybook/static/css/main.8e50f4fb.chunk.css",
+    "main.js": "/diarybook/static/js/main.89d1d1ad.chunk.js",
+    "main.js.map": "/diarybook/static/js/main.89d1d1ad.chunk.js.map",
     "runtime-main.js": "/diarybook/static/js/runtime-main.02f0f1ef.js",
     "runtime-main.js.map": "/diarybook/static/js/runtime-main.02f0f1ef.js.map",
     "static/js/2.ed479255.chunk.js": "/diarybook/static/js/2.ed479255.chunk.js",
     "static/js/2.ed479255.chunk.js.map": "/diarybook/static/js/2.ed479255.chunk.js.map",
     "index.html": "/diarybook/index.html",
-    "static/css/main.f7205a20.chunk.css.map": "/diarybook/static/css/main.f7205a20.chunk.css.map",
+    "static/css/main.8e50f4fb.chunk.css.map": "/diarybook/static/css/main.8e50f4fb.chunk.css.map",
     "static/js/2.ed479255.chunk.js.LICENSE.txt": "/diarybook/static/js/2.ed479255.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.02f0f1ef.js",
     "static/js/2.ed479255.chunk.js",
-    "static/css/main.f7205a20.chunk.css",
-    "static/js/main.b749fcda.chunk.js"
+    "static/css/main.8e50f4fb.chunk.css",
+    "static/js/main.89d1d1ad.chunk.js"
   ]
 }
