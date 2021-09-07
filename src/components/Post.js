@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams, useHistory } from "react-router-dom"
+import { Link, useParams, useHistory, Redirect } from "react-router-dom"
 import formatDate from "../helpers/formatDate";
 import { removePost } from '../features/posts/postsSlice'
 
@@ -8,7 +8,7 @@ export default function Post() {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
-    const {title, description, date} = useSelector(state => state.posts.find(post => post.id === id));
+    const post = useSelector(state => state.posts.find(post => post.id === id));
 
     const [isRemoveConfirmationOpen, setIsRemoveConfirmationOpen] = useState(false);
 
@@ -18,12 +18,13 @@ export default function Post() {
     }
 
     return (
+        post ?
         <>
             <Link to="/" className="bg-green-400 hover:bg-green-500">Go to home page</Link>
             <div className="px-4 mt-4">
-                <h1 className="text-3xl font-bold text-center">{title}</h1>
-                <p className="text-lg">{description}</p>
-                <p>{formatDate(date)}</p>
+                <h1 className="text-3xl font-bold text-center">{post.title}</h1>
+                <p className="text-lg">{post.description}</p>
+                <p>{formatDate(post.date)}</p>
             </div>
             <div className="my-4 flex gap-4 justify-center">
                 <Link to={`/posts/edit/${id}`} className="bg-gray-300 hover:bg-gray-400">Edit post</Link>
@@ -41,5 +42,7 @@ export default function Post() {
             </div>
             }
         </>
+        :
+        <Redirect to="/"/>
     )
 }

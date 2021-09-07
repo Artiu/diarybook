@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 import AddPostForm from './components/addPostForm';
 import EditPostForm from './components/editPostForm';
 import Post from './components/Post';
@@ -27,6 +27,9 @@ function App() {
           </Route>
           <Route path="/posts/:id">
             <Post/>
+          </Route>
+          <Route path="*">
+            <Redirect to="/"/>
           </Route>
         </Switch>
       </HashRouter>
