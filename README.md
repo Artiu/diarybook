@@ -1,4 +1,4 @@
-### Diarybook
+# Diarybook
 Diarybook is website for saving your memories. Memories are saved in local storage so your privacy is safe. I created this for learning redux (I know it's overkill for this small project, but I wanted to try it out).
 ## Technologies
 * React
