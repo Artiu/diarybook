@@ -9,7 +9,7 @@ export default function Posts() {
         <h1 className="text-4xl font-bold text-center">Your posts</h1>
             {posts.length > 0 ?
             <>
-                <Link to="/add" className="bg-green-400 hover:bg-green-500">Add post</Link>
+                <Link to="/add" className="mx-auto mt-6 bg-green-400 hover:bg-green-500">Add post</Link>
                 {posts.map(({ title, description, id, date }) => {
                     return (
                         <div key={id} className="mt-4 border-b-2 flex justify-between">
